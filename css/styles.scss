@@ -1,0 +1,196 @@
+//three primary colors;
+$primaryGreen: #008061;
+$primaryDarkGreen: #005843;
+$lightGrey: #f1f1f1;
+$mediumGrey: #ccc;
+$grey: #888888;
+
+//the main header which includes title and add btn
+.header-container{
+  position: relative;
+  .page-header{
+    border-bottom: 5px solid $primaryGreen;
+    color:$primaryGreen;
+  }
+  .right-btn-pane{
+    position:absolute;
+    bottom: 0;
+    right:0;
+    $btnSize:40px;
+    $btnSizeHalf:20px;
+    #counter-container{
+      display: inline;
+      margin-right: 30px;
+      line-height: $btnSize;
+      font-size:20px;
+    }
+    #add-item-btn{
+      margin-bottom: 8px;
+      font-size: 20px;
+      float:right;
+      width:$btnSize;
+      height:$btnSize;
+      border-radius:$btnSizeHalf;
+      border:2px solid $primaryGreen;
+      text-align: center;
+      line-height: $btnSize;
+      position: relative;
+      font-size: $btnSizeHalf;
+      color:$primaryGreen;
+      &:hover, &:focus, &:active{
+        color:$primaryDarkGreen;
+        border-color:$primaryDarkGreen;
+      }
+      i{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+    }
+  }
+
+}
+
+//bootstrap dialog
+.modal-dialog{
+  .modal-header{
+    background-color: $primaryDarkGreen;
+    h4{
+      color:#fff;
+    }
+    .close {
+      font-size: 24px;
+      font-weight: 500;
+      color: #fff;
+      opacity: 1;
+      text-shadow: 0 1px 0 $primaryDarkGreen;
+      &:hover, &:focus, &:active{
+        color: $mediumGrey;
+      }
+
+    }
+  }
+  #item-title-input{
+    width:100%;
+    margin-top: 2px;
+  }
+  input, label, textarea{
+    width:100%;
+    display: block;
+
+  }
+  input, textarea{
+    border: 1.5px solid $primaryGreen;
+    border-radius:5px;
+    padding: 2px 5px;
+  }
+}
+.modal.fade .modal-dialog {//so the modal fades in on the bottom
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transform: translate(0,25%);
+    -ms-transform: translate(0,25%);
+    -o-transform: translate(0,25%);
+    transform: translate(0,25%);
+}
+#deleteItemModal{
+  .modal-body{
+    padding:0;
+  }
+  .modal-footer{
+    border:0;
+  }
+}
+
+//the item that the user adds
+.grocery-item{
+  padding:10px 10px;
+  border: solid 1.7px $primaryDarkGreen;
+  margin: 5px;
+  border-radius: 10px;
+  &.checked{
+    opacity:0.5;
+  }
+  .title-row-border{
+    border-top: 1px solid $grey;
+    margin: 5px 0 10px 0;
+  }
+  &:hover, &:focus{
+    box-shadow: 0px 0px 10px 2px $grey;
+    transform:scale(1.01);
+    transition: 0.25s transform;
+  }
+  .item-title{
+    font-size:20px;
+    margin:0px
+
+  }
+  .item-content{
+
+  }
+  .item-btns a{
+    font-size:30px;
+    color:$primaryGreen;
+    &:hover, &:focus, &:active{
+      text-decoration: none;
+      color: $primaryDarkGreen;
+    }
+
+    & i.fa-square-o{
+      margin-right: 4.28px;
+    }
+    &.expand-item .fa:before{
+      content: "\f066";
+    }
+    &.expand-item.collapsed .fa:before{
+      content: "\f065";
+    }
+  }
+  &:nth-child(2n + 1){
+    background-color: $lightGrey;
+  }
+}
+
+//general bootstrap elements
+.btn-primary{
+  background-color: $primaryGreen;
+  &:hover, &:focus, &:active{
+    background-color: $primaryDarkGreen;
+  }
+}
+
+//the tool tip used from bootstrap
+.tooltip.top{
+  .tooltip-arrow{
+    border-top-color: $primaryDarkGreen;
+  }
+  .tooltip-inner{
+      background-color: $primaryDarkGreen;
+  }
+}
+
+
+//mobile scpecific styles
+@media screen  and (max-width: 767px){
+  .mar-top-xs-20{
+    margin-top:20px
+  }
+}
+
+@media screen and (min-width: 768px){
+  .text-right-sm-up{
+    text-align: right;
+  }
+}
+
+
+//helper classes
+.mar-top-10{
+  margin-top: 10px;
+}
+.mar-bottom-10{
+  margin-bottom: 10px;
+}
