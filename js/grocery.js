@@ -41,6 +41,12 @@ var GroceryListWidget = {
       }
       GroceryListWidget.itemBtnEvents();
       $('[data-toggle="tooltip"]').tooltip();
+      if(items.length === 0 ){
+        $("#no-items-message").removeClass("hidden");
+      }else{
+        $("#no-items-message").addClass("hidden");
+      }
+
     }else{
       //if there is no messages
       $("#no-items-message").removeClass("hidden");
